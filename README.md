@@ -20,10 +20,10 @@ npm run dev     # 监听 http://localhost:3000
 # 终端 2：启动前端
 cd client
 npm install
-npm run dev     # 监听 http://localhost:5173
+npm run dev     # 监听 http://localhost:3030
 ```
 
-浏览器打开 http://localhost:5173 ，Vite 自动代理 API 请求到后端。
+浏览器打开 http://localhost:3030 ，Vite 自动代理 API 请求到后端。
 
 ## Docker 部署
 
@@ -38,7 +38,7 @@ docker compose logs -f
 docker compose down
 ```
 
-服务运行在 http://localhost:3000，数据持久化在 Docker Volume `notes-data`。
+服务运行在 http://localhost:3030，数据持久化在 Docker Volume `notes-data`。
 
 ## 功能
 

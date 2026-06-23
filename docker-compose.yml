@@ -5,13 +5,13 @@ services:
       dockerfile: Dockerfile
     container_name: notes-app
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-3030}:3030"
     volumes:
       - notes-data:/app/data
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=3030
       - DB_PATH=/app/data/notes.db
 
 volumes:

@@ -34,10 +34,10 @@ COPY --from=frontend-builder /app/client/dist/ ./client/dist/
 # Create data directory for SQLite persistence
 RUN mkdir -p /app/data
 
-EXPOSE 3000
+EXPOSE 3030
 
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=3030
 ENV DB_PATH=/app/data/notes.db
 
 CMD ["node", "server/dist/index.js"]
