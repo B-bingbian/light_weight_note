@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-header: rgba(255, 255, 255, 0.85);
+  --border-color: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --accent-color: #4f46e5;
+  --accent-ring: rgba(79, 70, 229, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.06);
+  --danger-color: #dc2626;
+  --danger-bg: #fef2f2;
+  --success-color: #16a34a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-header: rgba(15, 23, 42, 0.85);
+    --border-color: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --accent-color: #818cf8;
+    --accent-ring: rgba(129, 140, 248, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --danger-color: #f87171;
+    --danger-bg: rgba(220, 38, 38, 0.1);
+    --success-color: #4ade80;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans SC', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* md-editor-v3 overrides */
+.md-editor {
+  --md-bk-color: var(--bg-primary) !important;
+  --md-bk-color-outstand: var(--bg-secondary) !important;
+  --md-border-color: var(--border-color) !important;
+  --md-color: var(--text-primary) !important;
+  --md-hover-bk-color: var(--bg-secondary) !important;
+}
+
+/* Editor textarea / CodeMirror content */
+.md-editor .cm-editor {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.md-editor .cm-editor .cm-content {
+  caret-color: var(--accent-color);
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.md-editor .cm-editor .cm-line {
+  color: var(--text-primary);
+}
+
+.md-editor .cm-editor .cm-cursor {
+  border-left-color: var(--accent-color);
+}
+
+.md-editor .cm-editor .cm-selectionBackground,
+.md-editor .cm-editor .cm-selectionLayer .cm-selectionBackground {
+  background: var(--accent-ring) !important;
+}
+
+/* Toolbar buttons */
+.md-editor-toolbar {
+  background: var(--bg-secondary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.md-editor-toolbar button {
+  color: var(--text-secondary) !important;
+}
+
+.md-editor-toolbar button:hover {
+  color: var(--text-primary) !important;
+  background: var(--border-color) !important;
+}
+
+.md-editor-toolbar button.active {
+  color: var(--accent-color) !important;
+}
+
+/* Preview area */
+.md-editor-preview {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.md-editor-preview h1,
+.md-editor-preview h2,
+.md-editor-preview h3,
+.md-editor-preview h4 {
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+.md-editor-preview blockquote {
+  color: var(--text-secondary);
+  border-left-color: var(--accent-color);
+  background: var(--bg-secondary);
+}
+
+.md-editor-preview code {
+  background: var(--bg-secondary);
+  color: var(--danger-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.md-editor-preview pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.md-editor-preview pre code {
+  color: var(--text-primary);
+  background: none;
+  padding: 0;
+}
+
+.md-editor-preview table {
+  border-color: var(--border-color);
+}
+
+.md-editor-preview th,
+.md-editor-preview td {
+  border-color: var(--border-color);
+}
+
+.md-editor-preview th {
+  background: var(--bg-secondary);
+}
+
+.md-editor-preview a {
+  color: var(--accent-color);
+}
+
+.md-editor-preview hr {
+  border-color: var(--border-color);
+}
+
+/* Editor input wrapper */
+.md-editor-input-wrapper {
+  background: var(--bg-primary);
+}
+
+/* Split line between editor and preview */
+.md-editor-resize-operate {
+  width: 1px !important;
+  background-color: var(--border-color) !important;
+  opacity: 0.6;
+}
+
+.md-editor-resize-operate:hover {
+  width: 3px !important;
+  opacity: 1;
+}
+
+/* Toolbar divider */
+.md-editor-divider {
+  width: 1px;
+  margin: 0 6px;
+  opacity: 0.5;
+}

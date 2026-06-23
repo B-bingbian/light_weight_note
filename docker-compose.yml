@@ -1,0 +1,18 @@
+services:
+  notes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: notes-app
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - notes-data:/app/data
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_PATH=/app/data/notes.db
+
+volumes:
+  notes-data:
