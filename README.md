@@ -2,6 +2,8 @@
 
 基于 Vue 3 + Express + SQLite 的在线笔记网站，使用 Docker 一键部署。
 
+在线预览 [notes](http://106.13.99.151:3030/)
+
 ## 技术栈
 
 - **前端**：Vue 3 + TypeScript + Vite + md-editor-v3
