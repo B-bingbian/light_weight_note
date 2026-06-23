@@ -4,7 +4,7 @@ WORKDIR /app/client
 COPY client/package*.json ./
 RUN npm ci
 COPY client/ ./
-RUN npm run build
+RUN npx vite build
 
 # ---- Stage 2: Build Server (compile TypeScript) ----
 FROM node:20-alpine AS server-builder
@@ -25,8 +25,8 @@ RUN npm ci --omit=dev
 # Copy compiled server
 COPY --from=server-builder /app/server/dist/ ./server/dist/
 
-# Copy database schema for first-run initialization
-COPY --from=server-builder /app/server/src/db/schema.sql ./server/src/db/
+# Copy database schema (must be next to compiled connection.js in dist/db/)
+COPY --from=server-builder /app/server/src/db/schema.sql ./server/dist/db/
 
 # Copy built frontend static files
 COPY --from=frontend-builder /app/client/dist/ ./client/dist/
